@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module("myApp", [])
     .filter('fromTo', function() {
         return function(input, from, total, lessThan) {
@@ -43,3 +45,4 @@ angular.module("myApp", [])
             'Bootstrap', 'AngularJS', 'Instagram', 'Factory'
         ]
     });
+// you may add more controllers below
