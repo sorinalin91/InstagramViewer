@@ -51,7 +51,7 @@ body{
 	width: 200px;
 }
 .wrapper{
-	margin-top: 50px;
+	margin-top: 15px;
 	width: 98vw;
 	margin-left: 12px;
 	position: relative;
@@ -101,4 +101,28 @@ body{
 }
 .created_date{
 
+}
+.banner_spot{
+	width: 700px;
+	height: 90px;
+	margin: 0 auto;
+	border: 1px solid black;
+	margin-bottom: 15px;
+}
+.banner_title{
+	text-align: center;
+	margin-top: 50px;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #d6d6d6;
+}
+.banner_title p{
+	font-size: 20px;
+	margin: 0;
+	padding-top: 5px;
+}
+.banner_title h1{
+	font-size: 44px;
+	color: #da334c;
+	font-weight: bold;
+	margin-top: 0px;
 }

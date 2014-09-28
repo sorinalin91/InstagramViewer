@@ -15,10 +15,12 @@
     <div class="nav_bar">
       <span>Instagram Viewer</span>
     </div>
+    <div class="banner_title">
+          <p>A new experience viewing instagram on the web</p>
+          <h1>Popular photos on Instagram</h1>
+    </div>
     <div class="wrapper">
-        <div class="more_content"> 
-            <button type="button" class="btn btn-success" ng-click="getMore()">Click to see more ({{pics.length}})</button>    
-        </div>
+        <div class="banner_spot"></div>
         <div ng-repeat="p in pics | orderBy:orderBy" class="picture_wrapper">
               <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" class="post_thumbnail" title="{{p.caption.text}}"></a>
               <a href="{{p.link}}" target="_blank"><img ng-src="{{p.user.profile_picture}}" class="profile_picture" ></a>
@@ -27,6 +29,9 @@
               <a href="{{p.link}}"><span class="glyphicon glyphicon-comment"><span class="glyphicon-comment-text">{{p.comments.count}}</span></span></a>
               <a href="{{p.link}}"><span class="glyphicon glyphicon-heart"><span class="glyphicon-heart-text">{{p.likes.count}}</span></span></a>      
               <span class="description">{{p.caption.text}}</span>
+        </div>
+         <div class="more_content"> 
+            <button type="button" class="btn btn-success" ng-click="getMore()">Click to see more ({{pics.length}})</button>    
         </div>
   </div>
   <!-- <div ng-view></div> -->
