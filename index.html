@@ -4,61 +4,28 @@
   <meta charset="utf-8">
   <title>My AngularJS App</title>
   <link rel="stylesheet" href="css/app.css"/>
-</head>
-<body>
-  <!DOCTYPE html>
-<html>
-
-<head>
-
   <meta charset="UTF-8">
-
   <title>Instagram images using AngularJS - CodePen</title>
-
   <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.css'>
-
-    <style>
-.glyphicon-heart {
-  position: relative;
-  top: -15px;
-  color: red;
-}
-</style>
-
-    <script src="js/prefixfree.min.js"></script>
-
+  <script src="js/prefixfree.min.js"></script>
 </head>
-
 <body>
 
-  <div class="container" ng-app="myApp" ng-controller="Example">
-    <div class="jumbotron">
-        <div class="container">
-            <h2>Instagram images using AngularJS</h2>
-            <p>Need to fetch Instgram images for your <code>AngularJS</code> <code>Bootstrap</code> website? AngularJS makes easy to fetch the images, bootstrap makes et easy to layout - so here you go, a simple pen to use a <code>API</code> using your favourite building blocks. <em>- Code found using Google - borrowed from a <a href="http://jsfiddle.net/scyrizales/pC9dH/"><code>JSFIDDLE</code></a></em></p>
-            <div class="col-md-12 tags"><strong>Tags:</strong>
-            <span ng-repeat="tag in tags">
-            <a href="http://codepen.io/search?q={{tag}}&limit=all&depth=everything&show_forks=false"><code class="btn btn-primary btn-xs">{{tag}}</code></a></span>
-            </div>
-        </div>
+  <div ng-controller="Example">
+    <div class="nav_bar">
+        <span>Instagram Viewer</span>
     </div>
-    <div class="container">
+    <div class="wrapper">
       <div class="row">
-        <div class="col-md-12"><h1>Showing popular Instagram pictures <button type="button" class="btn btn-success" ng-click="getMore()">You have {{pics.length}} pictures on page - Click to see more pictures?</button></h1></div>
+        <div class="more_content"> <button type="button" class="btn btn-success" ng-click="getMore()">Click to see more ({{pics.length}})</button>    </div>
       </div>
         <div class="row">
-    <div ng-repeat="p in pics | orderBy:orderBy" class="col-md-2">
+    <div ng-repeat="p in pics | orderBy:orderBy" class="picture_wrapper">
       <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" class="img-responsive thumbnail" title="{{p.caption.text}}"></a>
 <span class="glyphicon glyphicon-heart"> {{p.likes.count}}</span>      
         </div>
     </div>
 </div>
-
-
-</body>
-
-</html>
-
   <div ng-view></div>
 
   <script src="lib/angular/angular.js"></script>
