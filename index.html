@@ -13,20 +13,23 @@
 
   <div ng-controller="Example">
     <div class="nav_bar">
-        <span>Instagram Viewer</span>
+      <span>Instagram Viewer</span>
     </div>
     <div class="wrapper">
-      <div class="row">
-        <div class="more_content"> <button type="button" class="btn btn-success" ng-click="getMore()">Click to see more ({{pics.length}})</button>    </div>
-      </div>
-        <div class="row">
-    <div ng-repeat="p in pics | orderBy:orderBy" class="picture_wrapper">
-      <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" class="img-responsive thumbnail" title="{{p.caption.text}}"></a>
-<span class="glyphicon glyphicon-heart"> {{p.likes.count}}</span>      
+        <div class="more_content"> 
+            <button type="button" class="btn btn-success" ng-click="getMore()">Click to see more ({{pics.length}})</button>    
         </div>
-    </div>
-</div>
-  <div ng-view></div>
+        <div ng-repeat="p in pics | orderBy:orderBy" class="picture_wrapper">
+              <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" class="post_thumbnail" title="{{p.caption.text}}"></a>
+              <a href="{{p.link}}" target="_blank"><img ng-src="{{p.user.profile_picture}}" class="profile_picture" ></a>
+              <a href="{{p.link}}"><span class="username">{{p.user.username}}</span></a></br>
+              <span class="created_date">{{p.caption.created_time| date:'MM/dd/yyyy'}}</span>
+              <a href="{{p.link}}"><span class="glyphicon glyphicon-comment"><span class="glyphicon-comment-text">{{p.comments.count}}</span></span></a>
+              <a href="{{p.link}}"><span class="glyphicon glyphicon-heart"><span class="glyphicon-heart-text">{{p.likes.count}}</span></span></a>      
+              <span class="description">{{p.caption.text}}</span>
+        </div>
+  </div>
+  <!-- <div ng-view></div> -->
 
   <script src="lib/angular/angular.js"></script>
   <script src="js/routes.js"></script>
