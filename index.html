@@ -21,15 +21,17 @@
     </div>
     <div class="wrapper">
         <div class="banner_spot"></div>
-        <div ng-repeat="p in pics | orderBy:orderBy" class="picture_wrapper">
+        <ul ng-repeat="p in pics | orderBy:orderBy" class="picture_wrapper">
+          <li>
               <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" class="post_thumbnail" title="{{p.caption.text}}"></a>
               <a href="{{p.link}}" target="_blank"><img ng-src="{{p.user.profile_picture}}" class="profile_picture" ></a>
               <a href="{{p.link}}"><span class="username">{{p.user.username}}</span></a></br>
-              <span class="created_date">{{p.caption.created_time| date:'MM/dd/yyyy'}}</span>
+              <span class="created_date">{{p.caption.created_time}}</span>
               <a href="{{p.link}}"><span class="glyphicon glyphicon-comment"><span class="glyphicon-comment-text">{{p.comments.count}}</span></span></a>
               <a href="{{p.link}}"><span class="glyphicon glyphicon-heart"><span class="glyphicon-heart-text">{{p.likes.count}}</span></span></a>      
-              <span class="description">{{p.caption.text}}</span>
-        </div>
+              <p class="description">{{p.caption.text}}</p>
+          </li>  
+        </ul>
          <div class="more_content"> 
             <button type="button" class="btn btn-success" ng-click="getMore()">Click to see more ({{pics.length}})</button>    
         </div>

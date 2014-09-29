@@ -69,9 +69,10 @@ body{
 	border-top-right-radius: 2%;
 	border-top-left-radius: 2%;
 	display: inline-block;
-	float: left;
-	height: 420px;
+	list-style-type: none;
+	padding: 0;
 }
+
 .more_content{
 	bottom: 0;
 	position: fixed;
@@ -94,9 +95,8 @@ body{
 .description{
 	float: left;
 	color: #363636;
-	padding-left:10px;
+	padding: 0 10px 0 4px;
 	height: 60px;
-	text-overflow:ellipsis;
 	overflow: hidden;
 }
 .created_date{
